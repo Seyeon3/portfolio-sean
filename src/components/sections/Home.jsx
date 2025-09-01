@@ -23,7 +23,7 @@ export const Home = () => {
           transition={{ delay: 0.5, duration: 1 }}
           className="mt-4 text-lg text-gray-300"
         >
-          A passionate IT student, web developer, and tech enthusiast 🚀
+          A passionate web developer, and tech enthusiast.
         </motion.p>
 
         {/* Buttons */}

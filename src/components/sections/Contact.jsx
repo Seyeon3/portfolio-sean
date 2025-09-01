@@ -61,13 +61,13 @@ export const Contact = () => {
               Feel free to reach out through the form or directly via the following contact details:
             </p>
             <div className="flex items-center gap-3">
-              <Phone className="text-teal-400" /> <span>+63 912 345 6789</span>
+              <Phone className="text-teal-400" /> <span>+63 927 956 6746</span>
             </div>
             <div className="flex items-center gap-3">
-              <Mail className="text-amber-400" /> <span>your@email.com</span>
+              <Mail className="text-amber-400" /> <span>seanmanaog22@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
-              <MapPin className="text-teal-400" /> <span>Quezon City, Philippines</span>
+              <MapPin className="text-teal-400" /> <span>Caloocan City, Philippines</span>
             </div>
           </motion.div>
 
