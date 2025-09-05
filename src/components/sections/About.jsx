@@ -91,13 +91,13 @@ export const About = () => {
           </h2>
 
           <p className="text-lg leading-relaxed mb-6 text-gray-300">
-            Hello! My name is <span className="font-semibold text-white">Sean Michael Manaog</span>, I’m 22 years old, and I recently graduated from Global Reciprocal College with a Bachelor of Science in Information Technology.  
-            I have a strong foundation in both computer hardware and software, and I’m passionate about creating dynamic, responsive web applications.
+            Hi! I’m <span className="font-semibold text-white">Sean Michael Manaog</span>, a 22-year-old fresh graduate from Global Reciprocal Colleges with a Bachelor of Science in Information Technology.  
+            I specialize in both computer hardware and software, with a strong passion for building modern, responsive, and user-friendly web applications.
           </p>
 
           <p className="text-lg leading-relaxed text-gray-300">
-            My journey began with a fascination for how websites work and the technologies behind them.  
-            I’m committed to continuously learning new tools and techniques to deliver better user experiences.
+            What started as a curiosity about how websites work has grown into a drive to master the technologies that power them.  
+            I’m dedicated to continuous learning, exploring new tools, and creating meaningful digital experiences that blend functionality with design.
           </p>
 
           <div className="mt-8 h-0.5 bg-blue-500 opacity-50 rounded-full"></div>
