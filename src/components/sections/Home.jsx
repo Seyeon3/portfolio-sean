@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export const Home = () => {
+  const [showResume, setShowResume] = useState(false);
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-black text-white px-4"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-black text-white px-4 relative"
     >
       <div className="max-w-3xl text-center">
         {/* Hero Text */}
@@ -33,14 +36,13 @@ export const Home = () => {
           transition={{ delay: 1, duration: 1 }}
           className="mt-8 flex gap-4 justify-center"
         >
-          {/* Download Resume */}
-          <a
-            href="/Resume-manaog.pdf"
-            download
+          {/* View Resume (opens iframe modal) */}
+          <button
+            onClick={() => setShowResume(true)}
             className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded font-medium transition-all duration-200"
           >
-            Download Resume
-          </a>
+            View Resume
+          </button>
 
           {/* Contact Me Button */}
           <a
@@ -52,6 +54,29 @@ export const Home = () => {
           </a>
         </motion.div>
       </div>
+
+      {/* Resume Preview Modal */}
+      {showResume && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] relative shadow-lg">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowResume(false)}
+              className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+            >
+              ✕
+            </button>
+
+            {/* Iframe Preview */}
+            <iframe
+              src="/Resume-manaog.pdf"
+              title="Resume Preview"
+              className="w-full h-full rounded-b-lg"
+            ></iframe>
+
+          </div>
+        </div>
+      )}
     </section>
   );
 };
