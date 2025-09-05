@@ -3,7 +3,7 @@ import "./App.css";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar.jsx";
 import { MobileMenu } from "./components/MobileMenu.jsx";
-import  Home  from "./components/sections/Home.jsx";
+import { Home }g from "./components/sections/Home.jsx";
 import { About } from "./components/sections/About.jsx";
 import Skills from "./components/sections/Skills.jsx"; // ✅ FIXED (default import)
 import { Project } from "./components/sections/Project.jsx";
