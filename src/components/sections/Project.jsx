@@ -206,7 +206,7 @@ export const Project = () => {
           className="text-3xl font-bold mb-10 text-center text-white relative"
         >
           <span className="relative z-10 drop-shadow-[0_0_8px_#3b82f6]">
-            Projects
+            My projectshit
           </span>
           <span className="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-16 h-1 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></span>
         </motion.h2>
