@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import './App.css';
-import { LoadingScreen } from './components/LoadingScreen';
-import { Navbar } from './components/Navbar.jsx';
-import { MobileMenu } from './components/MobileMenu.jsx';
-import { Home } from './components/sections/Home.jsx';
-import { About } from './components/sections/About.jsx';
-import Skills from './components/sections/Skills.jsx';   // ✅ FIXED (default import)
-import { Project } from './components/sections/Project.jsx';
-import Certificate from './components/sections/Certificate.jsx';
-import { Contact } from './components/sections/Contact.jsx';
-import { Footer } from './components/Footer.jsx';
+import { useState } from "react";
+import "./App.css";
+import { LoadingScreen } from "./components/LoadingScreen";
+import { Navbar } from "./components/Navbar.jsx";
+import { MobileMenu } from "./components/MobileMenu.jsx";
+import { Home } from "./components/sections/Home.jsx";
+import { About } from "./components/sections/About.jsx";
+import Skills from "./components/sections/Skills.jsx"; // ✅ FIXED (default import)
+import { Project } from "./components/sections/Project.jsx";
+import Certificate from "./components/sections/Certificate.jsx";
+import { Contact } from "./components/sections/Contact.jsx";
+import { Footer } from "./components/Footer.jsx";
 import "./index.css";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <About />
-        <Skills />   {/* ✅ now works correctly */}
+        <Skills /> {/* ✅ now works correctly */}
         <Project />
         <Certificate />
         <Contact />
