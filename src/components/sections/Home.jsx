@@ -34,7 +34,7 @@ export const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="mt-8 flex gap-4 justify-center"
+          className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
         >
           {/* View Resume (opens iframe modal) */}
           <button
@@ -58,7 +58,7 @@ export const Home = () => {
       {/* Resume Preview Modal */}
       {showResume && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] relative shadow-lg">
+          <div className="bg-white rounded-lg w-full max-w-3xl md:max-w-4xl h-[80vh] sm:h-[85vh] relative shadow-lg flex flex-col">
             {/* Close Button */}
             <button
               onClick={() => setShowResume(false)}
@@ -73,7 +73,6 @@ export const Home = () => {
               title="Resume Preview"
               className="w-full h-full rounded-b-lg"
             ></iframe>
-
           </div>
         </div>
       )}
