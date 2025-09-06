@@ -7,7 +7,7 @@ export const LoadingScreen = ({ onComplete }) => {
 
   useEffect(() => {
     // fade in on mount
-    setTimeout(() => setFade("opacity-100"), 100);
+    setTimeout(() => setFade("opacity-100"), 200);
 
     let index = 0;
     const interval = setInterval(() => {
@@ -17,8 +17,8 @@ export const LoadingScreen = ({ onComplete }) => {
         clearInterval(interval);
         setTimeout(() => {
           setFade("opacity-0"); // fade out
-          setTimeout(onComplete, 700); // wait until fade-out finished
-        }, 800);
+          setTimeout(onComplete, 1500); // wait until fade-out finished
+        }, 1200); // delay bago mag-fade out
       }
     }, 120);
 
@@ -27,7 +27,7 @@ export const LoadingScreen = ({ onComplete }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 bg-black flex flex-col items-center justify-center overflow-hidden transition-opacity duration-700 ease-in-out ${fade}`}
+      className={`fixed inset-0 z-50 bg-black flex flex-col items-center justify-center overflow-hidden transition-opacity duration-[1500ms] ease-in-out ${fade}`}
     >
       {/* Robot GIF */}
       <div className="relative flex flex-col items-center mb-8">
