@@ -69,7 +69,7 @@ export const Home = () => {
 
             {/* Iframe Preview */}
             <iframe
-              src="/Resume-manaog.pdf"
+              src="/CV-MANAOG.pdf"
               title="Resume Preview"
               className="w-full h-full rounded-b-lg"
             ></iframe>
