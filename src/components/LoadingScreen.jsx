@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
-  const [text, setText] = useState("");
   const [fade, setFade] = useState("opacity-0"); // start hidden
   const [progress, setProgress] = useState(0); // percentage
   const fullText = "Loading...";
@@ -9,14 +8,6 @@ export const LoadingScreen = ({ onComplete }) => {
   useEffect(() => {
     // fade in on mount
     setTimeout(() => setFade("opacity-100"), 200);
-
-    // typing effect
-    let index = 0;
-    const typingInterval = setInterval(() => {
-      setText(fullText.substring(0, index));
-      index++;
-      if (index > fullText.length) clearInterval(typingInterval);
-    }, 120);
 
     // percentage + progress bar
     let percentage = 0;
@@ -34,11 +25,12 @@ export const LoadingScreen = ({ onComplete }) => {
       }
     }, 80);
 
-    return () => {
-      clearInterval(typingInterval);
-      clearInterval(progressInterval);
-    };
+    return () => clearInterval(progressInterval);
   }, [onComplete]);
+
+  // derive loading text from progress
+  const lettersToShow = Math.floor((progress / 100) * fullText.length);
+  const text = fullText.substring(0, lettersToShow);
 
   return (
     <div
@@ -53,7 +45,7 @@ export const LoadingScreen = ({ onComplete }) => {
         />
       </div>
 
-      {/* Typing Text */}
+      {/* Typing Text (synced with progress) */}
       <div className="text-3xl font-mono font-bold text-white flex items-center tracking-widest mb-6">
         {text}
         <span className="ml-1 animate-blink">|</span>
