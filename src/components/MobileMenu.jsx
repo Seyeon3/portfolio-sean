@@ -14,7 +14,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     { name: "Skills", href: "#skills", delay: "delay-500" },
     { name: "Project", href: "#project", delay: "delay-600" },
     { name: "Certifications", href: "#certificates", delay: "delay-700" },
-
+    { name: "Contact", href: "#contact", delay: "delay-800" },
   ];
 
   return (

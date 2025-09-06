@@ -8,7 +8,7 @@ import { About } from "./components/sections/About.jsx";
 import Skills from "./components/sections/Skills.jsx"; // ✅ FIXED (default import)
 import { Project } from "./components/sections/Project.jsx";
 import Certificate from "./components/sections/Certificate.jsx";
-import  Contact from "./components/sections/Contact.jsx";
+import  {Contact} from "./components/sections/Contact.jsx";
 import { Footer } from "./components/Footer.jsx";
 import "./index.css";
 
