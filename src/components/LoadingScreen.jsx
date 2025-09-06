@@ -2,30 +2,39 @@ import { useEffect, useState } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
   const [text, setText] = useState("");
+  const [fade, setFade] = useState("opacity-0"); // start hidden
   const fullText = "Loading...";
 
   useEffect(() => {
+    // fade in on mount
+    setTimeout(() => setFade("opacity-100"), 100);
+
     let index = 0;
     const interval = setInterval(() => {
       setText(fullText.substring(0, index));
       index++;
       if (index > fullText.length) {
         clearInterval(interval);
-        setTimeout(onComplete, 1000);
+        setTimeout(() => {
+          setFade("opacity-0"); // fade out
+          setTimeout(onComplete, 700); // wait until fade-out finished
+        }, 800);
       }
     }, 120);
+
     return () => clearInterval(interval);
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center overflow-hidden">
-      
+    <div
+      className={`fixed inset-0 z-50 bg-black flex flex-col items-center justify-center overflow-hidden transition-opacity duration-700 ease-in-out ${fade}`}
+    >
       {/* Robot GIF */}
       <div className="relative flex flex-col items-center mb-8">
-        <img 
-          src="/robot.gif"  // 👉 replace with your actual gif path
+        <img
+          src="/robot.gif"
           alt="Loading Robot"
-          className="w-60 h-60 object-contain"  // bigger size, no glow
+          className="w-60 h-60 object-contain"
         />
       </div>
 
