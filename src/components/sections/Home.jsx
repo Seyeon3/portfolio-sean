@@ -104,13 +104,25 @@ export const Home = () => {
             experience.
           </p>
 
+          {/* Buttons + Socials */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+            {/* View Resume */}
             <button
               onClick={() => setShowResume(true)}
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105"
             >
               View Resume
             </button>
+
+            {/* Get in Touch */}
+            <a
+              href="#contact"
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105"
+            >
+              Get in Touch
+            </a>
+
+            {/* Social Icons */}
             <div className="flex gap-4 text-2xl text-white">
               <motion.a
                 href="https://facebook.com/sean.manaog.7"
