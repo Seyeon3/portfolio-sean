@@ -39,14 +39,18 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center space-x-3" onClick={() => handleClick("#home")}>
+          <a
+            href="#home"
+            className="flex items-center space-x-3"
+            onClick={() => handleClick("#home")}
+          >
             <img
               src={logo}
               alt="Logo"
               className="h-9 w-9 rounded-full object-cover border border-white/20 hover:scale-110 transition-transform duration-300"
             />
-            <span className="font-mono text-xl font-bold text-white">Sean
-              <b className="text-blue-500">.dev</b>
+            <span className="font-mono text-xl font-bold text-white">
+              Sean<b className="text-blue-500">.dev</b>
             </span>
           </a>
 
@@ -55,9 +59,21 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             className="w-8 h-8 flex flex-col justify-center items-center gap-[6px] cursor-pointer z-50 md:hidden"
             onClick={() => setMenuOpen((prev) => !prev)}
           >
-            <span className={`block w-6 h-[2px] bg-white rounded transition-all duration-500 ease-in-out ${menuOpen ? "rotate-45 translate-y-[8px]" : ""}`}></span>
-            <span className={`block w-6 h-[2px] bg-white rounded transition-all duration-500 ease-in-out ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block w-6 h-[2px] bg-white rounded transition-all duration-500 ease-in-out ${menuOpen ? "-rotate-45 -translate-y-[8px]" : ""}`}></span>
+            <span
+              className={`block w-6 h-[2px] bg-white rounded transition-all duration-500 ease-in-out ${
+                menuOpen ? "rotate-45 translate-y-[8px]" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-[2px] bg-white rounded transition-all duration-500 ease-in-out ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-[2px] bg-white rounded transition-all duration-500 ease-in-out ${
+                menuOpen ? "-rotate-45 -translate-y-[8px]" : ""
+              }`}
+            ></span>
           </div>
 
           {/* Desktop Links */}
@@ -68,15 +84,25 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               { name: "Skills", href: "#skills" },
               { name: "Project", href: "#project" },
               { name: "Certifications", href: "#certificates" },
-              { name: "Contact", href: "#contact" },
+              { name: "Contact", href: "#contact", important: true }, // Make Contact special
             ].map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => handleClick(link.href)}
-                className={`relative text-gray-300 hover:text-white transition-colors after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full ${
-                  activeSection === link.href ? "text-white after:w-full" : ""
-                }`}
+                className={
+                  link.important
+                    ? `px-4 py-2 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-md ${
+                        activeSection === link.href
+                          ? "ring-2 ring-blue-400"
+                          : ""
+                      }`
+                    : `relative text-gray-300 hover:text-white transition-colors after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full ${
+                        activeSection === link.href
+                          ? "text-white after:w-full"
+                          : ""
+                      }`
+                }
               >
                 {link.name}
               </a>
