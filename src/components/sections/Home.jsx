@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 export const Home = () => {
   const [showResume, setShowResume] = useState(false);
@@ -123,13 +124,14 @@ export const Home = () => {
             </a>
 
             {/* Social Icons */}
-            <div className="flex gap-4 text-2xl text-white">
+            <div className="flex gap-4 text-2xl text-white mt-4 sm:mt-0">
               <motion.a
                 href="https://facebook.com/sean.manaog.7"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 whileHover={{ scale: 1.2 }}
+                className="hover:text-blue-500"
               >
                 <FaFacebook />
               </motion.a>
@@ -139,6 +141,7 @@ export const Home = () => {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
                 whileHover={{ scale: 1.2 }}
+                className="hover:text-gray-400"
               >
                 <FaGithub />
               </motion.a>
@@ -148,8 +151,17 @@ export const Home = () => {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 whileHover={{ scale: 1.2 }}
+                className="hover:text-blue-400"
               >
                 <FaLinkedin />
+              </motion.a>
+              <motion.a
+                href="mailto:seanmanaog22@gmail.com"
+                aria-label="Gmail"
+                whileHover={{ scale: 1.2 }}
+                className="hover:text-red-400"
+              >
+                <SiGmail />
               </motion.a>
             </div>
           </div>
